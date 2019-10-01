@@ -5,4 +5,9 @@ class ArticleTest < ActiveSupport::TestCase
     article = Article.new title: 'novo artigo ruby', text: 'amo ruby'
     assert article.save
   end
+  test 'deve remover artigo existente ' do
+    article = Article.new title: 'novo artigo java', text: 'amo java'
+    assert article.save
+    assert article.destroy
+  end
 end
