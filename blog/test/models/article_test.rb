@@ -14,5 +14,9 @@ class ArticleTest < ActiveSupport::TestCase
     article = Article.new title: '', text: 'primeiro artigo'
     assert_not article.save
   end
-
+  test 'nao deve editar artigo com titulo com tamanho invalido' do
+    article = Article.new title: 'Teste blog'
+    article.save
+    assert_not article.update title: 'blog'
+  end
 end
