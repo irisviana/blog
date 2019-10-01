@@ -10,4 +10,9 @@ class ArticleTest < ActiveSupport::TestCase
     assert article.save
     assert article.destroy
   end
+  test 'nao deve criar artigo com titulo em branco ' do
+    article = Article.new title: '', text: 'primeiro artigo'
+    assert_not article.save
+  end
+
 end
