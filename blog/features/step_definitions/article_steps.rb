@@ -48,3 +48,9 @@ When("Eu mudo o titulo do artigo para {string}") do |title|
   fill_in 'article[title]', :with => title
 end
 
+Then("Eu vejo que o artigo de titulo {string} foi editado com sucesso") do |title|
+  visit '/articles'
+  expect(page).to have_content(title)
+end
+
+
