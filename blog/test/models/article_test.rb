@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class ArticleTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test 'deve salvar novo artigo valido' do
+    article = Article.new title: 'novo artigo ruby', text: 'amo ruby'
+    assert article.save
+  end
 end
