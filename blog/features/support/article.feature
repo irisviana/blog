@@ -13,3 +13,11 @@ Feature: Artigo
     When Eu preencho o artigo com titulo '' e texto ''
     And Eu clico em salvar artigo
     Then Eu vejo uma mensagem de artigo invalido
+
+  Scenario: editar artigo com titulo com caracteres insuficiente
+    Given O artigo com com titulo 'novo artigo Ruby' e texto 'Ruby' existe
+    And Eu estou na pagina de artigos
+    When Eu clico em editar artigo com titulo 'novo artigo Ruby'
+    And Eu mudo o titulo do artigo para 'Ruby'
+    And Eu clico em salvar artigo
+    Then Eu vejo uma mensagem de artigo invalido
